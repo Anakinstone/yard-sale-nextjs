@@ -1,0 +1,98 @@
+@import 'vars';
+
+.MyOrder {
+	width: 360px;
+	padding: 24px;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	background-color: var(--white);
+	top: 60px;
+	bottom: 0;
+	border-radius: 6px;
+	border: 1px solid var(--very-light-pink);
+	position: fixed;
+	transition: 1s ease;
+	animation: swipeLeft 1s ease forwards;
+}
+@keyframes swipeLeft {
+	100% {transform: translateX(-8px);}
+}
+.title-container {
+	display: flex;
+}
+.title-container img {
+	transform: rotate(180deg);
+	cursor: pointer;
+	margin-right: 14px;
+}
+.title {
+	font-size: var(--lg);
+	font-weight: bold;
+}
+.my-order-content{
+	overflow-y: scroll;
+	max-height: 400px;
+	
+}
+/* width */
+.my-order-content::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+.my-order-content::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+.my-order-content::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+/* Handle on hover */
+.my-order-content::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+.order {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+	background-color: var(--text-input-field);
+	margin-bottom: 24px;
+	border-radius: 8px;
+	padding: 0 24px;
+}
+.order p:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+}
+.order p span:nth-child(1) {
+	font-size: var(--md);
+	font-weight: bold;
+}
+.order p:nth-child(2) {
+	text-align: end;
+	font-weight: bold;
+}
+
+.primary-button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	width: 100%;
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+}
+@media (max-width: 640px) {
+	.MyOrder {
+		width: 100%;
+	}
+	.my-order-content {
+		max-height: 500px;
+	}
+}
